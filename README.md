@@ -61,7 +61,7 @@ EdgeShield consists of three main components:
 
 ### 🖼️ Arduino Circuit Diagram
 
-![Arduino Simulation](images/arduino_simulation.png)
+![Arduino Simulation](images/stark_solutions_iot.png)
 
 ---
 
