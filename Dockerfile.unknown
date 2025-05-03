@@ -1,0 +1,32 @@
+# Use official lightweight Python image
+FROM python:3.9-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Install system dependencies for OpenCV and Streamlit
+RUN apt-get update && apt-get install -y \
+    ffmpeg \
+    libsm6 \
+    libxext6 \
+    libgl1 \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Upgrade pip
+RUN pip install --upgrade pip
+
+# Copy requirements file first to install dependencies
+COPY requirements.txt .
+
+# Install Python dependencies (including TensorFlow)
+RUN pip install --no-cache-dir --ignore-installed -r requirements.txt
+
+# Copy the rest of the project files (including your model and app)
+COPY ppe.pt .
+COPY yolo11s.pt .
+COPY new.py .
+# Expose Streamlit port
+EXPOSE 8501
+
+# Run the Streamlit app
+CMD ["streamlit", "run", "new.py", "--server.headless=true"]
