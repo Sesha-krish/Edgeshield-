@@ -1,6 +1,6 @@
 # EdgeShield: A Hybrid Hardware-Software System for PPE Compliance Detection
 
-![EdgeShield Logo](images/edgeshield_logo.png)
+![EdgeShield Logo](images/stark_solutions_iot.png)
 
 **Author:** Seshadrinathan K  
 **Institution:** SRM Institute of Science and Technology  
